@@ -1,4 +1,4 @@
-import {useEffect, useState, Fragment} from "react";
+import {useEffect, useState, Fragment, useRef} from "react";
 import {useQuery} from "react-query";
 import {getData} from "../../api";
 import {urlTag} from "../../constant";
@@ -22,6 +22,21 @@ const SubHeading = () => {
     const { data } = useQuery(['tags'], () => getData(urlTag));
     const [isOpen, setIsOpen] = useState(false);
     const [isMainOpen, setIsMainOpen] = useState(false);
+    const refContainer = useRef(null);
+    const handleClickOutside = e => {
+        if (refContainer.current && !refContainer.current.contains(e.target)) {
+            setIsOpen(false);
+            setIsMainOpen(false);
+        }
+    };
+    useEffect(() => {
+        if (isOpen || isMainOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+            return () => {
+                document.removeEventListener("mousedown", handleClickOutside);
+            }
+        }
+    }, [isOpen, isMainOpen]);
     useEffect(() => {
         if(data && data.data) {
             const { parent, children } = formatData(data.data);
@@ -32,7 +47,7 @@ const SubHeading = () => {
 
     if (parentTags) {
         return (
-            <div>
+            <div ref={refContainer}>
                 <Menu>
                     <Menu.Button onClick={() => setIsMainOpen(!isMainOpen)}>
                         {tag}
