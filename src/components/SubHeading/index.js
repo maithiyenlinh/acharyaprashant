@@ -29,11 +29,12 @@ const SubHeading = () => {
             setChildrenTags(children);
         }
     }, [data]);
+
     if (parentTags) {
         return (
             <div>
                 <Menu>
-                    <Menu.Button onClick={() => setIsMainOpen(true)}>
+                    <Menu.Button onClick={() => setIsMainOpen(!isMainOpen)}>
                         {tag}
                     </Menu.Button>
                     <Dropdown isOpen={isMainOpen}>
