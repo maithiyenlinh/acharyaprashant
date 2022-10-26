@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import { createContext, lazy, Suspense, useEffect, useState } from 'react';
+import { Navigate, Route, Routes, useLocation } from 'react-router';
 import './App.css';
+import {BOOK_PATH, CONTRIBUTE_PATH, COURSE_PATH, HOME_PATH} from "./constant/route";
+import Layout from "./components/Layout";
+import Courses from "./pages/courses";
+import { QueryClient, QueryClientProvider } from 'react-query'
+import SubHeading from "./components/SubHeading";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const queryClient = new QueryClient()
+    return (
+        <QueryClientProvider client={queryClient}>
+            <Layout>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Routes>
+                        <Route path={COURSE_PATH} element={<Courses />} />
+                    </Routes>
+                </Suspense>
+            </Layout>
+        </QueryClientProvider>
+    );
 }
 
 export default App;
