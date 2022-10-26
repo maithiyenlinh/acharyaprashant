@@ -1,6 +1,7 @@
 {
   "name": "acharyaprashant",
   "version": "0.1.0",
+  "homepage": "https://github.com/maithiyenlinh/acharyaprashant",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.3",
