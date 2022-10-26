@@ -56,7 +56,7 @@ const SubHeading = () => {
                         <Menu.Items className="absolute z-10 left-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                             <Menu.Item as='div'>
                                 <button onClick={() => {
-                                    setCurrentTag(all[language]);
+                                    setTag(all[language]);
                                     setIsMainOpen(false);
                                 }}>
                                     {all[language]}
@@ -67,7 +67,7 @@ const SubHeading = () => {
                                     <Menu.Item key={parentTag.tagId} as={'div'}>
                                         {({ active }) => (
                                             <button onClick={() => {
-                                                setCurrentTag(parentTag.name[language]);
+                                                setTag(parentTag.name[language]);
                                                 setIsMainOpen(false);
                                             }} onMouseEnter={() => {
                                                 if (parentTag.hasChildren) {
