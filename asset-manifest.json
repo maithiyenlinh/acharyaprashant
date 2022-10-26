@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/acharyaprashant/static/css/main.a2a4afeb.css",
-    "main.js": "/acharyaprashant/static/js/main.1be3eb63.js",
+    "main.js": "/acharyaprashant/static/js/main.6249d8ac.js",
     "static/js/787.ab4b3850.chunk.js": "/acharyaprashant/static/js/787.ab4b3850.chunk.js",
     "static/media/ic_aplogo.png": "/acharyaprashant/static/media/ic_aplogo.a77496d91577f5da47e0.png",
     "static/media/phone.svg": "/acharyaprashant/static/media/phone.aa76f2240bf83d779f4f4b2c013aba74.svg",
@@ -9,11 +9,11 @@
     "static/media/HI.svg": "/acharyaprashant/static/media/HI.743c22dd4b7c36bbdc2224d8f56ce404.svg",
     "index.html": "/acharyaprashant/index.html",
     "main.a2a4afeb.css.map": "/acharyaprashant/static/css/main.a2a4afeb.css.map",
-    "main.1be3eb63.js.map": "/acharyaprashant/static/js/main.1be3eb63.js.map",
+    "main.6249d8ac.js.map": "/acharyaprashant/static/js/main.6249d8ac.js.map",
     "787.ab4b3850.chunk.js.map": "/acharyaprashant/static/js/787.ab4b3850.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a2a4afeb.css",
-    "static/js/main.1be3eb63.js"
+    "static/js/main.6249d8ac.js"
   ]
 }
