@@ -5,14 +5,15 @@ import PropTypes from 'prop-types';
 const Dropdown = ({ isOpen, children }) => {
     return (
         <Transition
+            appear
             show={isOpen}
             as={Fragment}
-            enter="transition-max-height ease-in-out duration-1000 overflow-hidden"
-            enterFrom="max-h-0"
-            enterTo="max-h-[1000px]"
-            leave="transition-max-height ease-in-out duration-1000 overflow-hidden"
-            leaveFrom="max-h-[1000px]"
-            leaveTo="max-h-0"
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
         >
             {children}
         </Transition>

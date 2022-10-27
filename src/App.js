@@ -14,7 +14,7 @@ function App() {
             <Layout>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
-                        <Route path={COURSE_PATH} element={<Courses />} />
+                        <Route path='*' element={<Courses />} />
                     </Routes>
                 </Suspense>
             </Layout>
